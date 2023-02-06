@@ -1,0 +1,29 @@
+{
+  "name": "advanced-sort",
+  "version": "1.0.0",
+  "description": "",
+  "main": "quick-sort.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "a"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.3.4",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.11.19",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0"
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "trailingComma": "none"
+  },
+  "type": "module"
+}
