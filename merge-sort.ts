@@ -1,26 +1,35 @@
 // Merge Sort out-of-place
 // Do not modify the original array
 export function mergeSort(arr: number[]): number[] {
-  // Check if the input is length 1 or less
-    // If so, it's already sorted: return
+  if (arr.length <= 1) return arr;
 
-  // Divide the array in half
+  const division = Math.floor(arr.length / 2);
+  let [arr1, arr2] = [arr.slice(0, division), arr.slice(division)];
 
-  // Recursively sort the left half
-  // Recursively sort the right half
+  arr1 = mergeSort(arr1);
+  arr2 = mergeSort(arr2);
 
-  // Merge the halves together and return
+  return merge(arr1, arr2);
 }
 
 // Takes in two sorted arrays and returns them merged into one
 export function merge(arrA: number[], arrB: number[]): number[] {
-  // Create an empty return array
-
-  // Point to the first value of each array
-  // While there are still values in each array...
-    // Compare the first values of each array
-    // Add the smaller value to the return array
-    // Move the pointer to the next value in that array
-
-  // Return the return array
+  const arr = [];
+  let [aIndex, bIndex] = [0, 0];
+  while (arrA[aIndex] != null || arrB[bIndex] != null) {
+    let min: number = 0;
+    const [aNum, bNum] = [arrA[aIndex], arrB[bIndex]];
+    if (aNum != null && bNum != null) {
+      min = Math.min(aNum, bNum);
+      min === aNum ? aIndex++ : bIndex++;
+    } else if (aNum != null) {
+      min = aNum;
+      aIndex++;
+    } else if (bNum != null) {
+      min = bNum;
+      bIndex++;
+    }
+    arr.push(min);
+  }
+  return arr;
 }
